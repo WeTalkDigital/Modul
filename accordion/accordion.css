@@ -1,0 +1,107 @@
+.custom-accordion .accordion-item {
+    border-top: 0.5px solid #34302F;
+}
+.custom-accordion .accordion-item:last-child {
+    border-bottom: 0.5px solid #34302F; 
+}
+
+.accordion-title {
+    cursor: pointer;
+    padding: 16px 25px;
+    color: #34302F;
+    font-family: "PPAgrandir", Sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 153%;
+    letter-spacing: 0.34px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+.accordion-content {
+    display: none;
+    padding: 20px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 153%;
+    letter-spacing: 0.34px;
+    font-family: "PPAgrandir", Sans-serif;
+}
+
+.accordion-item.open .accordion-content {
+    display: block;
+}
+
+svg.svgtabikon {
+    margin-right: 29px;
+}
+
+
+.custom-accordion .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    padding: 0 10px;
+    border-top: 0.5px solid #34302F; 
+}
+
+.custom-accordion .accordion-item.open .accordion-content {
+      padding: 20px 67px;
+}
+
+
+.accordion-content p {
+    margin-bottom: 0px;
+}
+
+.accordion-content-flex {
+    display: flex;
+    gap: 45px; 
+}
+
+.accordion-content-flex > .accordion-content-image {
+    flex: 4; 
+}
+
+.accordion-content-flex > .accordion-content-text {
+    flex: 6; 
+}
+
+.accordion-content-flex > .accordion-content-image img {
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+
+.custom-accordion .accordion-item:not(.open) .accordion-content-flex > .accordion-content-image img {
+    opacity: 0.5;
+}
+
+span.egyedi-class {
+    text-transform: lowercase;
+}
+
+
+
+@media (max-width: 767px) {
+	
+.accordion-title {
+ 
+    color: #34302F;
+
+    font-size: 16px;
+
+}
+	
+	svg.svgtabikon {
+    margin-right: 18px;
+}
+
+.custom-accordion .accordion-item.open .accordion-content {
+    padding: 20px 19px;
+    font-size: 15px;
+}
+	
+	}
