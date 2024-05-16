@@ -1,0 +1,124 @@
+.slide {
+    background-size: cover;
+    background-position: center bottom;
+    height: 85vh;
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p.szoveg {
+    font-family: "PPAgrandir", Sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    letter-spacing: 0.8px;
+    color: white;
+    margin-bottom: 0px;
+    width: 813px;
+    text-align: center;
+}
+
+.slick-prev, .slick-next {
+    z-index: 10;
+}
+
+.slick-prev, .slick-next {
+    position: relative;
+    z-index: 10;
+}
+
+h2.cim {
+    font-family: "PPAgrandir", Sans-serif;
+    color: white;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 64px;
+    letter-spacing: 4.48px;
+    text-transform: uppercase;
+    width: 950px;
+    text-align: center;
+}
+
+.slick-arrow {
+    display: none;
+}
+
+.custom-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    width: 80px;
+    height: 80px;
+    background-color: #55555e00;
+    margin-right: 4%;
+}
+
+.custom-next:hover {
+    background-color: #55555e00;
+}
+
+button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, a.button:hover, button:focus, html input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, a.button:focus, a.wp-block-button__link:not(.has-background):active, a.wp-block-button__link:not(.has-background):focus, a.wp-block-button__link:not(.has-background):hover {
+    color: #ffffff;
+    background-color: #3f404700;
+}
+
+.dot {
+    width: 80px;
+    height: 80px;
+}
+
+.slick-dots li button:before {
+    content: '';
+}
+
+.slick-dots li.slick-active button:before {
+    color: #000;
+    background-color: #fff;
+    font-size: 1px;
+    width: 13px;
+    height: 13px;
+    margin-top: 0.3px;
+    border: 2px solid #BE7C4A;
+    opacity: 1;
+}
+
+.slick-dots li button:before {
+    content: '';
+    color: #000;
+    background-color: #fff;
+    font-size: 1px;
+    width: 13px;
+    height: 13px;
+    opacity: 1;
+    border: 2px solid #ffffff;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 35px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 2000px) {
+    .slide {
+        background-position: center bottom;
+    }
+}
