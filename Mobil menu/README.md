@@ -1,0 +1,1 @@
+A Elementor bővítményének Shortcode moduljával könnyedén beágyazható az egyedi mobil menü a weboldalra. A mobil menü aktiválásához egyszerűen illeszd be az alábbi shortcode-ot: [mobile_fullscreen]
