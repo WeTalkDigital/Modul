@@ -1,0 +1,205 @@
+.datepicker-container {
+    display: flex;
+    gap: 38px;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 63px;
+}
+
+.datepicker-field {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label {
+    color: #ffffff;
+    font-family: "PPAgrandir", Sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 11px;
+	text-align: center;
+}
+
+
+input.datepicker-input.rnw_arrive {
+    background-color: #7fffd400;
+      border-color: #ffffff70;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom-width: 1px;
+}
+
+
+input.datepicker-input.rnw_departure  {
+    background-color: #7fffd400;
+       border-color: #ffffff70;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom-width: 1px;
+}
+
+
+input.datepicker-input.rnw_departure::-webkit-input-placeholder {
+    color: #FFFFFF;
+     font-family: "PPAgrandir",Sans-serif;
+    font-size: 18px;
+  letter-spacing: 0.34px;
+  padding-bottom: 7px;
+  text-align: center;
+}
+
+input.datepicker-input.rnw_departure::-moz-placeholder {
+   color: #FFFFFF;
+     font-family: "PPAgrandir",Sans-serif;
+    font-size: 18px;
+  letter-spacing: 0.34px;
+  padding-bottom: 7px;
+  text-align: center;
+}
+
+input.datepicker-input.rnw_departure:-ms-input-placeholder {
+     color: #FFFFFF;
+     font-family: "PPAgrandir",Sans-serif;
+    font-size: 18px;
+  letter-spacing: 0.34px;
+  padding-bottom: 7px;
+  text-align: center;
+}
+
+input.datepicker-input.rnw_departure:-moz-placeholder {
+     color: #FFFFFF;
+     font-family: "PPAgrandir",Sans-serif;
+    font-size: 18px;
+  letter-spacing: 0.34px;
+  padding-bottom: 7px;
+  text-align: center;
+}
+
+
+ .datepicker-input::placeholder {
+    color: #FFFFFF;
+     font-family: "PPAgrandir",Sans-serif;
+    font-size: 18px;
+  letter-spacing: 0.34px;
+  padding-bottom: 7px;
+  text-align: center;
+        }
+
+div#szalloda-foglalas-form {
+    display: flex;
+    align-items: center;
+}
+
+
+.szalloda-foglalas-form {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.foglalas-gomb {
+    color: #FFF;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 153%;
+    letter-spacing: 1.12px;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 50px;
+    cursor: grab;
+    font-family: "PPAgrandir",Sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+svg.ajanlatsvger {
+    fill: #be7d4b;
+    width: 173px;
+    height: auto;
+}
+
+
+.datepicker {
+    padding: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    direction: ltr;
+    position: absolute;
+    background-color: #e7e5e2;
+}
+
+
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], input[type="number"], textarea, select {
+    color: #ffffff;
+    background-color: var(--base-2);
+    border-color: var(--base);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 7px 10px 13px 10px;
+}
+
+
+svg.szsvgfog {
+    fill: #ffffff9e;
+    width: 179px;
+    height: auto;
+}
+
+
+.foglalas-gomb-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 67px;
+}
+
+
+@media only screen and (max-width: 767px)  {
+
+div#szalloda-foglalas-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.foglalas-gomb {
+
+    margin-left: 0px;
+    cursor: grab;
+        margin-top: 25px;
+}
+
+.datepicker-container {
+    display: flex;
+    gap: 11px;
+    flex-direction: row;
+}
+	
+	
+	.datepicker-field {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+}
+	
+	.szalloda-foglalas-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+	
+	
+	
+	
+}

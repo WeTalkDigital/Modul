@@ -1,0 +1,1 @@
+A Elementor bővítményének Shortcode moduljával könnyedén beágyazható az egyedi foglalási sáv. Egyszerűen illeszd be az alábbi shortcode-ot: [szalloda_foglalas]
