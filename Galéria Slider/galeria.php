@@ -1,6 +1,5 @@
 <?php
 
-/
 function create_galeria_post_type_and_taxonomy() {
     // Egyedi bejegyzés
     $labels = array(
@@ -55,7 +54,6 @@ function create_galeria_post_type_and_taxonomy() {
 }
 add_action('init', 'create_galeria_post_type_and_taxonomy');
 
-
 function activate_galeria_plugin() {
     create_galeria_post_type_and_taxonomy();
     flush_rewrite_rules();
@@ -64,7 +62,6 @@ register_activation_hook(__FILE__, 'activate_galeria_plugin');
 
 // Shortcode 
 function galeria_slider_shortcode($atts) {
-
     $atts = shortcode_atts(
         array(
             'kategoria' => '',
@@ -83,7 +80,7 @@ function galeria_slider_shortcode($atts) {
             array(
                 'taxonomy' => 'galeria-kategoria',
                 'field'    => 'slug',
-                'terms'    => $atts['kategoria'],
+                'terms'    => sanitize_text_field($atts['kategoria']),
             ),
         );
     }
@@ -99,11 +96,16 @@ function galeria_slider_shortcode($atts) {
             $kep_id = get_post_meta(get_the_ID(), 'kepek', true);
             $kep_url = wp_get_attachment_url($kep_id);
 
-            $slider_html .= '
-                <div class="slider-item" style="background-image: url(\'' . $kep_url . '\'); background-size: cover; background-position: center; height: 650px;">
-                </div>
-            ';
+            if ($kep_url) {
+                $slider_html .= '
+                    <div class="slider-item" style="background-image: url(' . esc_url($kep_url) . '); background-size: cover; background-position: center; height: 650px;">
+                    </div>
+                ';
+            }
         }
+        wp_reset_postdata();
+    } else {
+        $slider_html .= '<div class="no-posts">Nincsenek bejegyzések</div>';
     }
 
     $slider_html .= '</div>';
@@ -121,19 +123,17 @@ function galeria_slider_shortcode($atts) {
         </div>
     ';
 
-    wp_reset_postdata();
-
     return $slider_html;
 }
 add_shortcode('galeria_slider', 'galeria_slider_shortcode');
 
 function galeria_slider_styles() {
-    wp_add_inline_style('slick-css', '');
+    wp_enqueue_style('slick-css', plugins_url('slick/slick.css', __FILE__));
+    wp_enqueue_style('slick-theme-css', plugins_url('slick/slick-theme.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'galeria_slider_styles');
 
 function galeria_slider_scripts() {
-    wp_enqueue_style('slick-css', plugins_url('slick/slick.css', __FILE__));
     wp_enqueue_script('slick-js', plugins_url('slick/slick.min.js', __FILE__), array('jquery'), '1.8.1', true);
     wp_enqueue_script('custom-slick-js', plugins_url('slick/custom-slick.js', __FILE__), array('jquery', 'slick-js'), '1.0.6', true);
 }

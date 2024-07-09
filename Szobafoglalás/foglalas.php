@@ -45,7 +45,7 @@ function szalloda_foglalas_shortcode() {
         </div>
         <div class="foglalas-gomb-container">
             <div class="foglalas-gomb">
-                <?php echo $lang_texts['request_offer']; ?>
+                <?php echo esc_html($lang_texts['request_offer']); ?>
                 <svg class="szsvgfog" xmlns="http://www.w3.org/2000/svg" width="207" height="8" viewBox="0 0 207 8" fill="none">
                     <path d="M206.354 4.35355C206.549 4.15829 206.549 3.84171 206.354 3.64645L203.172 0.464466C202.976 0.269204 202.66 0.269204 202.464 0.464466C202.269 0.659728 202.269 0.976311 202.464 1.17157L205.293 4L202.464 6.82843C202.269 7.02369 202.269 7.34027 202.464 7.53553C202.66 7.7308 202.976 7.7308 203.172 7.53553L206.354 4.35355ZM0 4.5H206V3.5L0 3.5L0 4.5Z"></path>
                 </svg>
@@ -56,7 +56,7 @@ function szalloda_foglalas_shortcode() {
         jQuery(document).ready(function($) {
             $('.szalloda-foglalas-form .datepicker-input').datepicker({
                 format: 'yyyy-mm-dd',
-                language: '<?php echo $current_lang; ?>'
+                language: '<?php echo esc_js($current_lang); ?>'
             });
 
             $('.szalloda-foglalas-form .foglalas-gomb').click(function() {
@@ -66,11 +66,11 @@ function szalloda_foglalas_shortcode() {
                 if(arrive && departure) {
                     var baseUrl = '<?php 
                         if ($current_lang === "en") {
-                            echo "https://melea.hu/en/booking/";
+                            echo esc_url("https://melea.hu/en/booking/");
                         } elseif ($current_lang === "de") {
-                            echo "https://melea.hu/de/reservierung/";
+                            echo esc_url("https://melea.hu/de/reservierung/");
                         } else {
-                            echo "https://melea.hu/foglalas/";
+                            echo esc_url("https://melea.hu/foglalas/");
                         }
                     ?>';
                     var url = baseUrl + '?rnw_arrive=' + encodeURIComponent(arrive) + '&rnw_departure=' + encodeURIComponent(departure);

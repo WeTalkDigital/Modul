@@ -1,6 +1,5 @@
 <?php
 
-
 function create_custom_post_type_and_taxonomy() {
     // Egyedi bejegyzés
     $labels = array(
@@ -89,13 +88,6 @@ function create_custom_fields() {
                         'return_format' => 'array',
                         'preview_size' => 'thumbnail',
                         'library' => 'all',
-                        'min_width' => '',
-                        'min_height' => '',
-                        'min_size' => '',
-                        'max_width' => '',
-                        'max_height' => '',
-                        'max_size' => '',
-                        'mime_types' => '',
                     ),
                 ),
             ),
@@ -143,7 +135,7 @@ function custom_accordion_shortcode($atts) {
             array(
                 'taxonomy' => 'modszer-kategoria',
                 'field'    => 'slug',
-                'terms'    => $atts['category'],
+                'terms'    => sanitize_text_field($atts['category']),
             ),
         ),
         'meta_query' => array(
@@ -177,7 +169,7 @@ function custom_accordion_shortcode($atts) {
             $szakertoi_csapatunk = get_field('szakertoi_csapatunk', $post_id);
             $titulus = '';
             if (isset($szakertoi_csapatunk['titulus']) && !empty($szakertoi_csapatunk['titulus'])) {
-                $titulus = ' - <span class="egyedi-class">' . $szakertoi_csapatunk['titulus'] . '</span>';
+                $titulus = ' - <span class="egyedi-class">' . esc_html($szakertoi_csapatunk['titulus']) . '</span>';
             }
             $szakertoi_kep = '';
             if (isset($szakertoi_csapatunk['szakertoi_kep']) && !empty($szakertoi_csapatunk['szakertoi_kep'])) {
@@ -191,7 +183,7 @@ function custom_accordion_shortcode($atts) {
             $output .= '<div class="accordion-title">';
             $output .= '<div class="title-text">' . get_the_title() . $titulus . '</div>';
             $output .= '<div class="title-icon"><svg class="svgtabikon" xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
-            <line x1="7.98682" y1="-4.37114e-08" x2="7.98682" y2="14" stroke="#BE7C4A" stroke-width="2"/>
+            <line x1="7.98682" y1="0" x2="7.98682" y2="14" stroke="#BE7C4A" stroke-width="2"/>
             <line x1="0.986816" y1="7" x2="14.9868" y2="7" stroke="#BE7C4A" stroke-width="2"/>
             </svg></div>';
             $output .= '</div>';
@@ -199,10 +191,10 @@ function custom_accordion_shortcode($atts) {
             if (!empty($szakertoi_kep)) {
                 $output .= '<div class="accordion-content-flex">';
                 $output .= '<div class="accordion-content-image">' . $szakertoi_kep . '</div>';
-                $output .= '<div class="accordion-content-text">' . $modszer_szoveg . '</div>';
+                $output .= '<div class="accordion-content-text">' . wp_kses_post($modszer_szoveg) . '</div>';
                 $output .= '</div>';
             } else {
-                $output .= $modszer_szoveg;
+                $output .= wp_kses_post($modszer_szoveg);
             }
             $output .= '</div>';
             $output .= '</div>';

@@ -1,4 +1,5 @@
 <?php
+
 // Bejegyzés
 function slider_post_type() {
     $labels = array(
@@ -70,7 +71,6 @@ function create_slider_custom_fields() {
 }
 add_action('acf/init', 'create_slider_custom_fields');
 
-
 function activate_slider_plugin() {
     slider_post_type();
     create_slider_custom_fields();
@@ -128,3 +128,5 @@ function add_slick_slider() {
     ');
 }
 add_action('wp_enqueue_scripts', 'add_slick_slider');
+
+?>
